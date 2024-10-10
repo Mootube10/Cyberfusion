@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Case</title>
+</head>
+<body>
+    <h1>Log a Report Case</h1>
+    <form id="reportForm">
+        <label for="username">Your Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="reportDetails">Report Details:</label><br>
+        <textarea id="reportDetails" name="reportDetails" rows="5" required></textarea><br><br>
+
+        <button type="submit">Send Report</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('reportForm');
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const data = {
+                username: document.getElementById('username').value,
+                reportDetails: document.getElementById('reportDetails').value
+            };
+
+            const response = await fetch('/submit-report', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert('Report submitted successfully!');
+            } else {
+                alert('There was an error submitting your report.');
+            }
+        });
+    </script>
+</body>
+</html>
