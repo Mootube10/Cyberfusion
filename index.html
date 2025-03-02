@@ -33,6 +33,7 @@
             background: #444;
         }
         section {
+            display: none;
             padding: 40px;
         }
         footer {
@@ -47,13 +48,14 @@
         CyberFusion - Innovation in Gaming & Beyond
     </header>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#services">Services</a>
-        <a href="#team">Team</a>
-        <a href="#contact">Contact</a>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('about')">About</a>
+        <a href="#" onclick="showPage('projects')">Projects</a>
+        <a href="#" onclick="showPage('services')">Services</a>
+        <a href="#" onclick="showPage('team')">Team</a>
+        <a href="#" onclick="showPage('contact')">Contact</a>
     </nav>
+    
     <section id="home">
         <h2>Welcome to CyberFusion</h2>
         <p>Pioneering game development and digital innovation.</p>
@@ -64,10 +66,12 @@
     </section>
     <section id="projects">
         <h2>Our Projects</h2>
+        <p>Explore our latest developments in game design, software, and digital experiences.</p>
         <ul style="list-style: none; padding: 0;">
             <li>Cyber-Surge - Fully released</li>
             <li>Hack-Frenzy - Fully released</li>
             <li>ByteBreaker - Beta Version (Still in development)</li>
+        </ul>
     </section>
     <section id="services">
         <h2>Our Services</h2>
@@ -83,16 +87,36 @@
             <li>Vacent - UI/UX Designer</li>
             <li>Mason  - Project Manager</li>
             <li>Vacent  - Marketing Specialist</li>
+        </ul>
     </section>
     <section id="contact">
         <h2>Contact Us</h2>
         <p>You may contact us through the Chatservice on the bottom right or contact us at tickets@cyberfusion-2fzgli.p.tawk.email</p>
     </section>
+    
     <footer>
         &copy; 2025 CyberFusion. All rights reserved.
     </footer>
 
-        <!--Start of Tawk.to Script-->
+    <script>
+        function showPage(pageId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            const page = document.getElementById(pageId);
+            if (page) {
+                page.style.display = 'block';
+            }
+        }
+
+        // Default to showing the home page
+        window.onload = function() {
+            showPage('home');
+        };
+    </script>
+
+            <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -105,7 +129,6 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-
     
 </body>
 </html>
