@@ -56,14 +56,19 @@
         <a href="#" onclick="showPage('contact')">Contact</a>
     </nav>
     
+    <!-- Home Page -->
     <section id="home">
         <h2>Welcome to CyberFusion</h2>
         <p>Pioneering game development and digital innovation.</p>
     </section>
+    
+    <!-- About Page -->
     <section id="about">
         <h2>About Us</h2>
         <p>CyberFusion is dedicated to pushing the boundaries of gaming and technology.</p>
     </section>
+    
+    <!-- Projects Page -->
     <section id="projects">
         <h2>Our Projects</h2>
         <p>Explore our latest developments in game design, software, and digital experiences.</p>
@@ -73,10 +78,13 @@
             <li>ByteBreaker - Beta Version (Still in development)</li>
         </ul>
     </section>
+    
+    <!-- Services Page -->
     <section id="services">
         <h2>Our Services</h2>
         <p>We offer game development, software solutions, and interactive digital experiences.</p>
     </section>
+    
     <section id="team">
         <h2>Meet the Team</h2>
         <p>Our talented professionals make innovation a reality.</p>
@@ -92,25 +100,29 @@
     <section id="contact">
         <h2>Contact Us</h2>
         <p>You may contact us through the Chatservice on the bottom right or contact us at tickets@cyberfusion-2fzgli.p.tawk.email</p>
+        </ul>
     </section>
-    
     <footer>
         &copy; 2025 CyberFusion. All rights reserved.
     </footer>
 
     <script>
+        // Function to display the appropriate page section and hide others
         function showPage(pageId) {
+            // Hide all sections
             const sections = document.querySelectorAll('section');
             sections.forEach(section => {
                 section.style.display = 'none';
             });
+            
+            // Show the selected page section
             const page = document.getElementById(pageId);
             if (page) {
                 page.style.display = 'block';
             }
         }
 
-        // Default to showing the home page
+        // Set default page to home when the page loads
         window.onload = function() {
             showPage('home');
         };
